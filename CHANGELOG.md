@@ -2,6 +2,14 @@
 
 Formato: fecha, qué cambió, quién. Lo más reciente arriba.
 
+## 2026-11-13 — Ajuste para no parecerse al sitio de iztac web
+
+- Hero partido: texto sobre fondo claro a la izquierda y panel verde con el tablero a la derecha (en lugar de hero oscuro con brillo y cuadrícula).
+- Botones rectangulares; sin etiqueta en píldora, sin marquesina.
+- Servicios como lista editorial numerada con flecha (no cuadrícula de tarjetas); avisos igual.
+- Proceso como línea con puntos y "Paso n" (no tarjetas 01–05).
+- Cabeceras de sección y pie en claro con línea dorada.
+
 ## 2026-11-13 — Rediseño completo: firma contable moderna (iztac web)
 
 - Se rehízo el sitio con las páginas de despachos que dio la clienta como guía: verde profundo, beige y dorado; Plus Jakarta Sans; barra fija con botón de agendar; hero con tablero de cumplimiento ilustrativo; sellos de confianza; servicios en tarjetas; misión y visión; proceso; avisos; preguntas; cierre; pie en columnas.

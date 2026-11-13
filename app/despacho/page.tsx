@@ -108,9 +108,8 @@ export default function Despacho() {
       )}
 
       {/* Compromisos (provisionales, ver data/compromisos.ts) */}
-      <section className="relative overflow-hidden bg-verde-900 text-white">
-        <div className="cuadricula absolute inset-0" aria-hidden="true" />
-        <Contenido className="relative">
+      <section className="bg-verde-900 text-white">
+        <Contenido>
           <Revelar>
             <Encabezado etiqueta="Nuestros compromisos" texto="Promesas concretas, no adjetivos." claro>
               Lo que puedes esperar

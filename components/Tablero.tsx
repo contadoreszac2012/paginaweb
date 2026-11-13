@@ -26,8 +26,8 @@ export default function Tablero() {
   }, [reducido, total]);
 
   return (
-    <div className="flota relative mx-auto w-full max-w-[460px]" aria-hidden="true">
-      <div className="rounded-3xl border border-white/10 bg-white p-6 text-tinta shadow-2xl shadow-black/30">
+    <div className="flota relative mx-auto w-full max-w-[440px]" aria-hidden="true">
+      <div className="rounded-lg bg-white p-6 text-tinta shadow-2xl shadow-black/30">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[13px] font-semibold text-gris">{inicio.tablero.titulo}</p>
@@ -76,7 +76,7 @@ export default function Tablero() {
         </div>
       </div>
       {/* tarjeta secundaria detrás */}
-      <div className="absolute -bottom-5 -left-5 -z-10 h-32 w-56 rounded-2xl bg-dorado/80" />
+      <div className="absolute -bottom-4 -right-4 -z-10 h-full w-full rounded-lg border border-dorado/60" />
     </div>
   );
 }

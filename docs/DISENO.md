@@ -12,6 +12,10 @@ Reglas de contenido que fijó la clienta:
 
 El rosa de la paleta anterior se sustituyó por dorado/beige, que es lo que usan las referencias. Si la clienta quiere el rosa de vuelta, se cambian los cuatro tokens `dorado*` en `globals.css`.
 
+## Qué lo distingue del sitio de iztac web (misma casa, otro lenguaje)
+
+El desarrollador pidió que no se pareciera a su propio sitio (hero oscuro con brillo y cuadrícula, píldoras, tarjetas iguales, proceso 01–05, marquesina). Por eso aquí: hero **partido** (claro + panel verde), **botones rectangulares**, **líneas doradas** como elemento de identidad, servicios y avisos como **listas editoriales** con número y flecha, proceso como **línea con puntos**, cabeceras y pie **claros**. Fondos oscuros solo en el panel del hero, "Nosotros" y "Compromisos".
+
 ## Colores
 
 Definidos en `app/globals.css` dentro de `@theme`. Se usan como clases de Tailwind (`bg-verde-900`, `text-dorado`, `border-arena-oscura`, etc.).
