@@ -1,67 +1,58 @@
 # Diseño
 
-## Concepto: "Rosa y esmeralda" (opción 23 del catálogo)
+## Dirección (13 de noviembre de 2026): firma contable moderna
 
-La clienta eligió esta dirección de un catálogo de 24 portadas (5 de noviembre de 2026). Resumen: crema de fondo, **verde esmeralda** para texto, botones y franjas, **rosa** como forma grande y acento. Cálido y femenino sin dejar de verse como despacho: la seriedad la ponen la serif de los títulos, el orden y las listas con base legal.
+Después de dos intentos que la clienta y el desarrollador consideraron planos o poco "de contaduría", el sitio se rehizo tomando como guía las páginas de despachos que ellos mismos señalaron (DHI Contadores, Contadores Medina, AF & Cía, Luna Meza, conta-dor): verde profundo, beige cálido, dorado como acento, tipografía sans limpia, tarjetas con ícono, cifras, proceso en pasos y un botón de "Agendar consulta" siempre visible.
 
-Tres referencias que ella señaló y cómo se tradujeron:
+Reglas de contenido que fijó la clienta:
+- La página **promociona al despacho y a la Doctora**; no compara con otros despachos ni dice "lo que otros no hacen".
+- **Sin fotos** de ella ni de banco. El elemento visual del hero es un tablero de cumplimiento ilustrativo (`components/Tablero.tsx`).
+- Los seis servicios se presentan **al mismo nivel**; normas STPS y antilavado son parte de la lista, no una sección aparte.
+- Sin cifras inventadas: la fila de cifras aparece solo cuando ella las dé (`data/cifras.ts`).
 
-| Referencia | Qué le gustó | Dónde quedó |
-| --- | --- | --- |
-| DHI Contadores | Botón "Agenda una consulta" al inicio, sección de proceso de seguimiento, tarjetas de cifras, servicios con ícono | Botón "Agendar consulta" en la barra y en el hero; "Cómo trabajamos" (5 pasos); fila de cifras (oculta hasta tener datos); tarjetas de servicios con ícono |
-| conta-dor.com | Encabezado limpio con menú visible y una franja de color con el título de cada sección | Barra con nombre + menú + botón; componente `Titulo` = franja esmeralda con el título centrado |
-| buencontador.com | Misión y visión como bloques de etiqueta corta + párrafo | Sección "El despacho": Misión, Visión y Valores como bloques con línea rosa arriba |
-
-Se descartó el diseño anterior ("libro mayor": hoja rayada, margen rojo, cuenta T). Sus archivos ya no existen en el proyecto.
+El rosa de la paleta anterior se sustituyó por dorado/beige, que es lo que usan las referencias. Si la clienta quiere el rosa de vuelta, se cambian los cuatro tokens `dorado*` en `globals.css`.
 
 ## Colores
 
-Definidos en `app/globals.css` dentro de `@theme`. Se usan como clases de Tailwind (`bg-crema`, `text-esmeralda`, `border-borde`, etc.).
+Definidos en `app/globals.css` dentro de `@theme`. Se usan como clases de Tailwind (`bg-verde-900`, `text-dorado`, `border-arena-oscura`, etc.).
 
 | Token | Valor | Uso |
 | --- | --- | --- |
-| `crema` | `#fbf5f1` | Fondo general |
+| `verde-900` | `#0b3b2e` | Hero, cabeceras de sección, "Cómo trabajamos", pie |
+| `verde-800` | `#0f4a3a` | Tarjetas oscuras |
+| `verde` | `#14594a` | Botón primario, enlaces, etiquetas, cierre |
+| `verde-100` / `verde-50` | `#dcebe3` / `#eef5f1` | Fondos suaves, chips |
+| `arena` | `#f5f1ea` | Fondo general |
+| `arena-oscura` | `#ebe4d8` | Bordes |
 | `blanco` | `#ffffff` | Tarjetas |
-| `borde` | `#ead6cc` | Líneas y bordes |
-| `esmeralda` | `#0f4f3f` | Texto principal, botones, franjas de título |
-| `esmeralda-oscuro` | `#0a3a2e` | Hover de botones |
-| `musgo` | `#4f6b62` | Texto secundario |
-| `rosa` | `#e9a3b4` | Formas grandes (arco de la foto), líneas de sección |
-| `rosa-claro` | `#f6dde3` | Chips, fondos suaves, cuadro de sanciones |
-| `rosa-texto` | `#c2607a` | Énfasis en texto, subrayado del menú, números del proceso |
-| `rosa-oscuro` | `#8a3a52` | Texto sobre rosa claro |
+| `dorado` | `#c8a45d` | Acento: líneas de etiqueta, íconos sobre verde, números, botón dorado |
+| `dorado-claro` | `#f1e6cc` | Fondos suaves dorados |
+| `tinta` | `#142019` | Texto principal |
+| `gris` | `#5b6b64` | Texto secundario |
 
-Contraste (WCAG AA): musgo sobre crema ≈ 5.5:1; rosa-oscuro sobre rosa-claro ≈ 5.9:1; crema sobre esmeralda ≈ 9:1; rosa-texto sobre crema ≈ 4.6:1 (solo en textos de 15 px o más y en negrita).
-
-Regla: el verde manda, el rosa acompaña. Nunca texto rosa pequeño sobre crema, nunca botones rosa.
+Contraste (WCAG AA): gris sobre arena ≈ 5.6:1; blanco sobre verde ≈ 7.3:1; dorado sobre verde-900 ≈ 6.4:1 (solo en textos de 14 px o más en negrita, y en números grandes).
 
 ## Tipografía
 
-| Familia | Uso | Por qué |
-| --- | --- | --- |
-| Cormorant Garamond (500, 600, 500 cursiva) | Títulos, misión y visión, lema, números del proceso | Serif elegante que da el tono "despacho"; la cursiva rosa es el acento del hero |
-| DM Sans (variable) | Texto, botones, menú, chips | Sans redonda y legible en celular; `tnum` activado para que las cifras alineen |
-
-Se cargan desde paquetes `@fontsource/*` (archivos servidos por Next). No hay dependencia de Google Fonts.
-
-Escala: cuerpo 17 px / 1.55. Franja de título 2.25–3 rem; hero 2.75–4.5 rem. Lectura limitada a ~60–64 caracteres por línea.
+Una sola familia: **Plus Jakarta Sans** (variable, paquete `@fontsource-variable/plus-jakarta-sans`). Títulos con la clase `.titulo` (peso 700, interletrado −0.025em). Cuerpo 17 px / 1.6. `tnum` activado para que las cifras alineen.
 
 ## Movimiento
 
-Solo dos movimientos, los dos cortos: la carga del inicio (`.aparece`, piezas en orden) y la entrada de cada página (`.entra`, vía `app/template.tsx`). Ambos se desactivan con `prefers-reduced-motion`. Sin animaciones al hacer scroll; los hovers solo cambian color o borde.
+Librería `motion` (`components/Animar.tsx`): `Revelar` (aparece al entrar en pantalla, una vez) y `Contador` (cifra que cuenta). CSS: `.aparece` (secuencia de carga del hero), `.entra` (cambio de página), `.flota` (el tablero flota), `.barra-crece` (gráfica del tablero), `.cinta` (términos que se desplazan). El tablero marca sus renglones uno a uno al cargar. Todo se desactiva con `prefers-reduced-motion`.
 
 ## Componentes
 
-- `Navegacion`: nombre y título, botón "Agendar consulta", menú de secciones con subrayado rosa en la activa. Cliente (necesita la ruta). En celular el menú se desplaza de lado.
-- `Titulo`: franja esmeralda con el título de la sección y entrada opcional. Exporta también `Contenido`, el contenedor estándar (ancho máximo 72 rem, relleno vertical).
-- `BotonWhatsApp`: botón primario/secundario. Con `cita` abre WhatsApp con el mensaje de agendar consulta; sin `cita`, con el mensaje general.
-- `IconoServicio`: mapa de íconos lucide por área.
-- `PiePagina`: copyright, aviso de privacidad, crédito.
+- `Navegacion`: barra fija con monograma, nombre, menú y botón de agendar; en celular el menú se desplaza de lado.
+- `Titulo`: cabecera de sección (verde-900, cuadrícula fina, resplandor dorado, ruta, título, entrada). Exporta `Contenido` y `Encabezado` (etiqueta con línea dorada + h2 + texto).
+- `Tablero`: tarjeta del hero.
+- `BotonWhatsApp`: botón; con `cita` abre WhatsApp con el mensaje de agendar.
+- `IconoServicio`: ícono por área (lucide).
+- `PiePagina`: pie en verde-900 con cuatro columnas.
 
 ## Qué no hacer
 
-- No usar el rosa en botones ni en texto pequeño.
-- No agregar gradientes ni sombras fuertes; la única sombra es la de la cita en el hero.
-- No meter textos del negocio en componentes; van en `data/` o `content/`.
-- No inventar cifras para las tarjetas del inicio: siguen ocultas hasta que la clienta las dé.
+- No comparar con otros despachos ni usar tono de alarma en el inicio.
+- No usar fotos de banco ni de terceros.
+- No inventar cifras, testimonios ni clientes.
+- No meter textos del negocio en componentes: van en `data/` o `content/`.
 - No agregar fuentes externas ni scripts de terceros sin actualizar el aviso de privacidad.

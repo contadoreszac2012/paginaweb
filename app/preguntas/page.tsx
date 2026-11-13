@@ -17,13 +17,13 @@ export default function Preguntas() {
       </Titulo>
 
       <Contenido>
-        <div className="mx-auto max-w-3xl rounded-2xl border border-borde bg-blanco px-6 sm:px-8">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-arena-oscura bg-blanco px-6 sm:px-8">
           {faq.map((item) => (
-            <details key={item.q} className="pregunta border-b border-borde last:border-b-0">
+            <details key={item.q} className="pregunta border-b border-arena-oscura last:border-b-0">
               <summary className="flex items-start justify-between gap-6 py-5">
-                <span className="serif text-xl font-semibold leading-snug sm:text-2xl">{item.q}</span>
+                <span className="text-lg font-semibold leading-snug sm:text-xl">{item.q}</span>
               </summary>
-              <p className="max-w-[64ch] pb-6 text-musgo">{item.a}</p>
+              <p className="max-w-[64ch] pb-6 text-gris">{item.a}</p>
             </details>
           ))}
         </div>

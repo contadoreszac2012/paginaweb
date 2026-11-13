@@ -23,7 +23,7 @@ export default function AvisoPrivacidad() {
 
       <Contenido className="!max-w-3xl space-y-6 leading-relaxed">
         <section>
-          <h2 className="serif text-2xl font-semibold">Responsable</h2>
+          <h2 className="text-xl font-bold">Responsable</h2>
           <p className="mt-2">
             {site.nombre}, con domicilio en {domicilio}, es responsable del tratamiento de tus datos
             personales. Contacto: {site.correo}.
@@ -31,7 +31,7 @@ export default function AvisoPrivacidad() {
         </section>
 
         <section>
-          <h2 className="serif text-2xl font-semibold">Datos que se recaban</h2>
+          <h2 className="text-xl font-bold">Datos que se recaban</h2>
           <p className="mt-2">
             Este sitio no tiene formularios ni guarda información de quien lo visita. Cuando te
             comunicas por WhatsApp, teléfono o correo, se reciben los datos que tú decidas compartir:
@@ -42,7 +42,7 @@ export default function AvisoPrivacidad() {
         </section>
 
         <section>
-          <h2 className="serif text-2xl font-semibold">Para qué se usan</h2>
+          <h2 className="text-xl font-bold">Para qué se usan</h2>
           <p className="mt-2">
             Para atender tu consulta, preparar una propuesta de servicios y, si contratas, prestar el
             servicio y cumplir las obligaciones legales que de él deriven. No se usan para publicidad
@@ -51,7 +51,7 @@ export default function AvisoPrivacidad() {
         </section>
 
         <section>
-          <h2 className="serif text-2xl font-semibold">Conservación</h2>
+          <h2 className="text-xl font-bold">Conservación</h2>
           <p className="mt-2">
             Si no se contrata un servicio, los datos de tu consulta se eliminan en un plazo máximo de
             doce meses. Si se contrata, se conservan durante la relación y el plazo que exigen las
@@ -60,7 +60,7 @@ export default function AvisoPrivacidad() {
         </section>
 
         <section>
-          <h2 className="serif text-2xl font-semibold">Tus derechos</h2>
+          <h2 className="text-xl font-bold">Tus derechos</h2>
           <p className="mt-2">
             Puedes acceder, rectificar, cancelar u oponerte al uso de tus datos (derechos ARCO), así
             como limitar su uso, escribiendo a {site.correo} con tu nombre y la solicitud. Se te
@@ -69,7 +69,7 @@ export default function AvisoPrivacidad() {
         </section>
 
         <section>
-          <h2 className="serif text-2xl font-semibold">Cambios al aviso</h2>
+          <h2 className="text-xl font-bold">Cambios al aviso</h2>
           <p className="mt-2">
             Cualquier cambio a este aviso se publicará en esta misma página. Última actualización:
             noviembre de 2026.

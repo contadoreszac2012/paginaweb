@@ -12,6 +12,14 @@ export const despacho = {
     "El enfoque es preventivo: es más barato tener la contabilidad, los contratos, el reglamento y los avisos en regla que defenderse en una inspección, un juicio o una revisión del SAT cuando ya no se puede corregir nada.",
   ],
 
+  /* Razones para elegir el despacho; se muestran en la tarjeta del inicio. */
+  porQue: [
+    "Un solo despacho para contabilidad, impuestos, nóminas y cumplimiento",
+    "Dirigido por una Doctora en Impuestos",
+    "Enfoque preventivo: cada obligación completa y a tiempo",
+    "Explicaciones claras, sin tecnicismos",
+  ],
+
   mision:
     "Acompañar a patrones y empresas en su contabilidad, impuestos, nóminas, cumplimiento laboral y obligaciones en materia de prevención de lavado de dinero (LFPIORPI), con un enfoque preventivo: identificar a tiempo qué le aplica a cada negocio, explicarlo con claridad y mantenerlo en regla ante el SAT, el IMSS, la STPS y la UIF, para que opere con tranquilidad y se concentre en crecer.",
 
@@ -31,5 +39,5 @@ export const despacho = {
   aniosExperiencia: null as number | null, // PENDIENTE
   formacion: null as string[] | null, // PENDIENTE: licenciatura, maestría, doctorado (institución)
   afiliaciones: null as string[] | null, // PENDIENTE: colegio de contadores, IMCP, etc.
-  foto: null as string | null, // PENDIENTE: ruta en /public, ej. "/foto-martha.jpg"
+  foto: null as string | null, // La clienta decidió no publicar su foto (13 nov 2026). Si cambia de opinión: ruta en /public, ej. "/foto-martha.jpg"
 };

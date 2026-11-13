@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import "@fontsource/cormorant-garamond/500.css";
-import "@fontsource/cormorant-garamond/600.css";
-import "@fontsource/cormorant-garamond/500-italic.css";
-import "@fontsource-variable/dm-sans";
+import "@fontsource-variable/plus-jakarta-sans";
 import "./globals.css";
 import { site } from "@/data/site";
 import Navegacion from "@/components/Navegacion";

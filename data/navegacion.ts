@@ -7,7 +7,7 @@ export const pestanas = [
   { href: "/", etiqueta: "Inicio" },
   { href: "/servicios", etiqueta: "Servicios" },
   { href: "/avisos", etiqueta: "Avisos" },
-  { href: "/despacho", etiqueta: "El despacho" },
+  { href: "/despacho", etiqueta: "Nosotros" },
   { href: "/preguntas", etiqueta: "Preguntas" },
   { href: "/contacto", etiqueta: "Contacto" },
 ] as const;
