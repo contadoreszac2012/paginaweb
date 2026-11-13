@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+/*
+ * Tokens de diseño. Explicados en docs/DISENO.md.
+ * Diseño elegido por la clienta: "Rosa y esmeralda" (opción 23 del catálogo).
+ * Crema de fondo, verde esmeralda para texto y botones, rosa para acentos.
+ */
+@theme {
+  --color-crema: #fbf5f1; /* fondo general */
+  --color-blanco: #ffffff; /* tarjetas */
+  --color-borde: #ead6cc; /* líneas y bordes */
+  --color-esmeralda: #0f4f3f; /* texto principal, botones, franjas */
+  --color-esmeralda-oscuro: #0a3a2e; /* hover */
+  --color-musgo: #4f6b62; /* texto secundario */
+  --color-rosa: #e9a3b4; /* formas grandes (arco) */
+  --color-rosa-claro: #f6dde3; /* chips, fondos suaves */
+  --color-rosa-texto: #c2607a; /* énfasis en texto */
+  --color-rosa-oscuro: #8a3a52; /* texto sobre rosa claro */
+
+  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans Variable", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-crema);
+  color: var(--color-esmeralda);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.55;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Títulos en serif */
+.serif {
+  font-family: var(--font-serif);
+  letter-spacing: 0.005em;
+}
+
+/* Cambio de página: la nueva entra con un leve movimiento */
+.entra {
+  animation: entra 0.32s ease-out both;
+}
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Secuencia de carga de la portada */
+.aparece {
+  animation: aparece 0.6s ease-out both;
+  animation-delay: var(--retraso, 0s);
+}
+@keyframes aparece {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .entra,
+  .aparece {
+    animation: none;
+  }
+}
+
+/* ===== Botones ===== */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  line-height: 1.2;
+  border: 1.5px solid var(--color-esmeralda);
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.1s ease;
+}
+.boton:active {
+  transform: translateY(1px);
+}
+.boton:focus-visible {
+  outline: 2px solid var(--color-esmeralda);
+  outline-offset: 3px;
+}
+.boton-primario {
+  background: var(--color-esmeralda);
+  color: #fff;
+}
+.boton-primario:hover {
+  background: var(--color-esmeralda-oscuro);
+  border-color: var(--color-esmeralda-oscuro);
+}
+.boton-secundario {
+  background: transparent;
+  color: var(--color-esmeralda);
+}
+.boton-secundario:hover {
+  background: color-mix(in srgb, var(--color-esmeralda) 7%, transparent);
+}
+
+/* ===== Chips ===== */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--color-rosa-claro);
+  color: var(--color-rosa-oscuro);
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ===== Navegación ===== */
+.nav-enlace {
+  position: relative;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  color: var(--color-esmeralda);
+  white-space: nowrap;
+}
+.nav-enlace::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--color-rosa-texto);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.18s ease;
+}
+.nav-enlace:hover::after,
+.nav-enlace[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+.nav-enlace:focus-visible {
+  outline: 2px solid var(--color-esmeralda);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+.nav-scroll {
+  scrollbar-width: none;
+}
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== Preguntas (details nativo) ===== */
+.pregunta summary {
+  list-style: none;
+  cursor: pointer;
+}
+.pregunta summary::-webkit-details-marker {
+  display: none;
+}
+.pregunta summary::after {
+  content: "+";
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--color-rosa-texto);
+  flex: none;
+}
+.pregunta[open] summary::after {
+  content: "–";
+}
+.pregunta summary:focus-visible {
+  outline: 2px solid var(--color-esmeralda);
+  outline-offset: 4px;
+}
